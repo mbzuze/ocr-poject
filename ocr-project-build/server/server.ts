@@ -24,7 +24,7 @@ const handle = app.getRequestHandler();
 // Create an instance of an Express server
 const server = express();
 
-// Custome API route using Express
+// Custom API route using Express
 server.get("/api/testapi", (req, res) => {
   res.json({ message: "Hello, Test API working perfectly here!" });
 });
