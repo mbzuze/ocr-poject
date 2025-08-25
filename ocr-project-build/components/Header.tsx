@@ -21,7 +21,7 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link';
 
 function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -30,14 +30,14 @@ function Header() {
       <header className="bg-gray-900">
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -56,12 +56,12 @@ function Header() {
               </PopoverButton>
             </Popover>
   
-            <a href="#" className="text-sm/6 font-semibold text-white">
+            <Link href="#" className="text-sm/6 font-semibold text-white">
               History
-            </a>
-            <a href="#" className="text-sm/6 font-semibold text-white">
+            </Link >
+            <Link href="#" className="text-sm/6 font-semibold text-white">
               About
-            </a>
+            </Link >
           </PopoverGroup>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
            {/* Log In Logic */}
@@ -71,14 +71,14 @@ function Header() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img
                   alt=""
                   src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
                   className="h-8 w-auto"
                 />
-              </a>
+              </Link >
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -96,18 +96,18 @@ function Header() {
                       Home
                     </DisclosureButton>
                   </Disclosure>
-                  <a
+                  <Link 
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                   >
                     History
-                  </a>
-                  <a
+                  </Link >
+                  <Link 
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                   >
                     About
-                  </a>
+                  </Link >
                 </div>
               </div>
             </div>
