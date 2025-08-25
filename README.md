@@ -20,3 +20,8 @@ Tailwind CSS
 
 ### Backend
 Express.js
+
+
+## Extra Packages Installed
+@headlessui/react
+@heroicons/react
