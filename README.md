@@ -28,6 +28,7 @@ Express.js
 formidable
 axios
 multer
+cors
 tesseract.js
 @google/generative-ai
 
