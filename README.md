@@ -29,6 +29,7 @@ formidable
 axios
 multer
 cors
+pdf-parse
 tesseract.js
 @google/generative-ai
 

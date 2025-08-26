@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
       uploadDir,
     });
 
-    console.log('🛠️ Parsing form...');
+    // console.log('🛠️ Parsing form...');
     const { fields, files } = await new Promise<{ fields: formidable.Fields; files: formidable.Files }>((resolve, reject) => {
       form.parse(nodeReq, (err, fields, files) => {
         if (err) {
@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
     }
 
     // ✅ Validate file type and size
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'application/pdf'];
     const maxSize = 10 * 1024 * 1024; // 10MB
 
     if (!uploadedFile.mimetype || !allowedTypes.includes(uploadedFile.mimetype)) {
@@ -110,13 +110,17 @@ export async function POST(req: NextRequest) {
       fs.createReadStream(uploadedFile.filepath),
       uploadedFile.originalFilename ?? fallbackName
     );
+    formData.append('firstName', firstName);
+    formData.append('lastName', lastName);
+    formData.append('dob', dob);
+    formData.append('extractionMethod', extractionMethod);
 
     const response = await axios.post('http://localhost:3000/process', formData, {
       headers: formData.getHeaders(),
     });
 
     const result = response.data;
-
+    console.log(result);
     // 🔁 Redirect to results page with summary
     return NextResponse.redirect(new URL(`/results?summary=${encodeURIComponent(result.summary)}`, req.url));  } catch (error: any) {
     console.error('Upload error:', error);
