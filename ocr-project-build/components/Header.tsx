@@ -30,7 +30,7 @@ function Header() {
       <header className="bg-gray-900">
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
@@ -50,14 +50,11 @@ function Header() {
             </button>
           </div>
           <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-            <Popover className="relative">
-              <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white">
-                Home
-              </PopoverButton>
-            </Popover>
-  
-            <Link href="#" className="text-sm/6 font-semibold text-white">
-              History
+            <Link href="/" className="text-sm/6 font-semibold text-white">
+              Home
+            </Link >
+            <Link href="/results" className="text-sm/6 font-semibold text-white">
+              Result
             </Link >
             <Link href="#" className="text-sm/6 font-semibold text-white">
               About
@@ -71,7 +68,7 @@ function Header() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
             <div className="flex items-center justify-between">
-              <Link href="#" className="-m-1.5 p-1.5">
+              <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img
                   alt=""
@@ -97,10 +94,16 @@ function Header() {
                     </DisclosureButton>
                   </Disclosure>
                   <Link 
-                    href="#"
+                    href="/"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                   >
-                    History
+                    Home
+                  </Link >
+                  <Link 
+                    href="/results"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                  >
+                    Result
                   </Link >
                   <Link 
                     href="#"

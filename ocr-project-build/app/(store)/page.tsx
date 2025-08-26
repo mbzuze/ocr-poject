@@ -1,13 +1,14 @@
 import Button from "@/components/ui/button";
-import Form from "next/form";
-
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
-
+import { PhotoIcon } from '@heroicons/react/24/solid'
 
 export default function Home() {
   return (
-    <div>
+  <div className="isolate bg-gray-900 px-6 py-24 sm:py-16 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">Data Entry</h2>
+    </div>
+    <br></br>
+    <div className="grid grid-cols-1">
       <form
         action='/api/upload'
         method="POST"
@@ -66,7 +67,7 @@ export default function Home() {
 
             <div className="col-span-full">
               <label htmlFor="cover-photo" className="block text-sm/6 font-medium text-white">
-                Extraction Document or Image
+                Document or Image to be Extracted
               </label>
               <div className="mt-2 flex justify-center rounded-lg border border-dashed border-white/25 px-6 py-10">
                 <div className="text-center">
@@ -76,10 +77,10 @@ export default function Home() {
                       htmlFor="file-upload"
                       className="relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-400 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-500 hover:text-indigo-300"
                     >
-                      <span>Upload a file</span>
+                      <span>Select a File to Upload</span>
                       <input id="file-upload" name="file" type="file" className="sr-only" />
                     </label>
-                    <p className="pl-1">or drag and drop</p>
+                    {/* <p className="pl-1">or drag and drop</p> */}
                   </div>
                   <p className="text-xs/5 text-gray-400">PDF, PNG, JPG up to 10MB</p>
                 </div>
@@ -119,25 +120,16 @@ export default function Home() {
                 </div>
               </fieldset>
             </div>
-
           </div>
         </div>
-
-        
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" className="text-sm/6 font-semibold text-white">
-          Cancel
-        </button>
-        <button
-          type="submit"
-          className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-        >
-          Save
-        </button>
+        <Button variant="secondary" type="reset" className="text-sm/6 font-semibold text-white">Clear</Button>
+        <Button variant="primary" type="submit" className="rounded-md bg-indigo-500 px-3 py-2 text-sm/6 font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Save</Button>
       </div>
-    </form>
+      </form>
     </div>
+  </div>
   );
 }

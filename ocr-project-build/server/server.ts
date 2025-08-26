@@ -83,7 +83,6 @@ server.post('/process', upload.single('file'), async (req, res) => {
 
   // Concatenate full name
   const fullName = `${firstName.trim()} ${lastName.trim()}`;
-  console.log(fullName + ' , you are ' + age + ' years old now!!!');
 
   // Ensure file exists in memory
   if (!file || !file.buffer) {
@@ -96,17 +95,12 @@ server.post('/process', upload.single('file'), async (req, res) => {
   let aiText: string | null = null;
   let parserText: string = "";
 
-  let extractedText = "";
-
   try {
     // AI-based extraction path
     if (extractionMethod === "ai-method") {
 
         // Build prompt for Gemini
-        const prompt = `
-  You are an intelligent document parser. This file belongs to ${fullName}, born on ${dob}.
-  Extract all relevant text, summarize key identifiers, and highlight any financial, legal, or personal references.
-`;
+        const prompt = `You are an intelligent document parser. This document is for ${fullName}, DOB ${dob}. Extract the full text to the best of your abilities.`;
 
         // Validate API Key
         const apiKey = process.env.GOOGLE_GEMINI_API;

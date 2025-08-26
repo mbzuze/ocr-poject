@@ -98,7 +98,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'File too large (max 10MB)' }, { status: 400 });
     }
 
-    // 7. Forward to your Express backend
+    // 7. Forward data to Express backend
     const forward = new FormData();
     const ext = uploaded.mimetype.split('/')[1] ?? 'bin';
     const filename = uploaded.originalFilename || `upload.${ext}`;
@@ -119,10 +119,10 @@ export async function POST(req: NextRequest) {
 
     const result = resp.data
 
-    // 5. encode the entire JSON result
+    // 8. encode the entire JSON result
     const payload = encodeURIComponent(JSON.stringify(result))
 
-    // 6. MUST use an absolute URL here
+    // 9. MUST use an absolute URL here
     const redirectUrl = new URL(`/results?payload=${payload}`, req.url)
     return NextResponse.redirect(redirectUrl, 303)
   } catch (err: any) {
