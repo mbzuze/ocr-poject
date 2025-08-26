@@ -25,3 +25,11 @@ Express.js
 ## Extra Packages Installed
 @headlessui/react
 @heroicons/react
+
+
+### Resources
+https://nextjs.org/docs/app/getting-started/installation
+
+https://tailwindflex.com/@manuela-bianka/call-to-action-buttons
+
+https://tailwindcss.com/plus/ui-blocks/documentation
