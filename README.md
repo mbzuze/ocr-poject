@@ -39,3 +39,6 @@ https://nextjs.org/docs/app/getting-started/installation
 https://tailwindflex.com/@manuela-bianka/call-to-action-buttons
 
 https://tailwindcss.com/plus/ui-blocks/documentation
+
+### Challenges Faced
+- I assumed my Gemini AI integration was not working for hours until I though of connecting my account to a Billing Plan, then it all just worked seamlessly 
