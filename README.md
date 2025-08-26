@@ -25,7 +25,11 @@ Express.js
 ## Extra Packages Installed
 @headlessui/react
 @heroicons/react
-
+formidable
+axios
+multer
+tesseract.js
+@google/generative-ai
 
 ### Resources
 https://nextjs.org/docs/app/getting-started/installation

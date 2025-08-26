@@ -8,10 +8,10 @@ import { ChevronDownIcon } from '@heroicons/react/16/solid'
 export default function Home() {
   return (
     <div>
-      <Form
-        action='/results'
-        formMethod="POST"
-        formEncType="multipart/form-data"      
+      <form
+        action='/api/upload'
+        method="POST"
+        encType="multipart/form-data"      
       >
       <div className="space-y-12">
 
@@ -77,7 +77,7 @@ export default function Home() {
                       className="relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-400 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-500 hover:text-indigo-300"
                     >
                       <span>Upload a file</span>
-                      <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                      <input id="file-upload" name="file" type="file" className="sr-only" />
                     </label>
                     <p className="pl-1">or drag and drop</p>
                   </div>
@@ -137,7 +137,7 @@ export default function Home() {
           Save
         </button>
       </div>
-    </Form>
+    </form>
 
       <Button>Save & Upload</Button>
     </div>
