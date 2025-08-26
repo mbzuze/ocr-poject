@@ -138,8 +138,6 @@ export default function Home() {
         </button>
       </div>
     </form>
-
-      <Button>Save & Upload</Button>
     </div>
   );
 }
