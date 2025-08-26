@@ -140,6 +140,8 @@ GOOGLE_GEMINI_API=ya29.your_api_key_here
 
 ```bash
 # Start Next.js + Express via the unified server script
+npm run dev
+or
 node server/server.ts
 
 # Open http://localhost:3000 in your browser
